@@ -1,4 +1,4 @@
-NAME = Container
+NAME = Span
 
 CXX = c++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98

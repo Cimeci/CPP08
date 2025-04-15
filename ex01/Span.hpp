@@ -6,12 +6,13 @@
 /*   By: inowak-- <inowak--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 08:46:39 by inowak--          #+#    #+#             */
-/*   Updated: 2025/04/14 11:44:24 by inowak--         ###   ########.fr       */
+/*   Updated: 2025/04/15 15:22:17 by inowak--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # pragma once
 
+# include "colors.hpp"
 # include <algorithm>
 # include <iostream>
 # include <vector>
@@ -19,6 +20,10 @@
 # include <cstdlib>
 # include <exception>
 # include <limits>
+
+extern int help;
+
+int randomNumber();
 
 class Span{
 	private:
@@ -35,7 +40,13 @@ class Span{
 		
 		void addNumber(int value);
 		
-		unsigned int shortestSpan() const;
-		unsigned int longestSpan() const;
+		unsigned int shortestSpan();
+		unsigned int longestSpan();
+
+		void addNumberList(std::vector<int>::iterator begin, std::vector<int>::iterator end);
+
+		std::vector<int> getSpan(){return span;}
 
 };
+
+
