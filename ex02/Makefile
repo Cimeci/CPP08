@@ -1,11 +1,11 @@
-NAME = Span
+NAME = MutantStack
 
 CXX = c++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 
 OBJDIR = obj
 
-SRC = main.cpp Span.cpp
+SRC = main.cpp
 
 OBJ = $(addprefix $(OBJDIR)/, $(SRC:.cpp=.o))
 
