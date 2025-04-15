@@ -1,4 +1,4 @@
-NAME = Container
+NAME = easyfind
 
 CXX = c++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
