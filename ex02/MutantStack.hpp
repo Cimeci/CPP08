@@ -6,7 +6,7 @@
 /*   By: inowak-- <inowak--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 16:07:02 by inowak--          #+#    #+#             */
-/*   Updated: 2025/04/15 18:50:08 by inowak--         ###   ########.fr       */
+/*   Updated: 2025/04/16 11:04:53 by inowak--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@
 template <typename T>
 class MutantStack : public std::stack<T>{
 	public:
+	
+		// CANONICAL FORM //
+
 		MutantStack();
 		MutantStack(const MutantStack &cp);
 		MutantStack &operator=(const MutantStack &op);

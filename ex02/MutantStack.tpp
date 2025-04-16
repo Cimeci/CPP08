@@ -6,13 +6,15 @@
 /*   By: inowak-- <inowak--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 16:07:00 by inowak--          #+#    #+#             */
-/*   Updated: 2025/04/15 18:31:16 by inowak--         ###   ########.fr       */
+/*   Updated: 2025/04/16 11:04:36 by inowak--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # pragma once
 
 # include "MutantStack.hpp"
+
+// CANONICAL FORM //
 
 template <typename T>
 MutantStack<T>::MutantStack(){}
