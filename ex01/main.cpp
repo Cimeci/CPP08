@@ -6,14 +6,12 @@
 /*   By: inowak-- <inowak--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 18:00:56 by inowak--          #+#    #+#             */
-/*   Updated: 2025/04/15 15:48:53 by inowak--         ###   ########.fr       */
+/*   Updated: 2025/04/16 10:59:33 by inowak--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "Span.hpp"
 # include "colors.hpp"
-
-int help = 0;
 
 int randomNumber(){
 	int nb = std::rand() % 10000;
@@ -27,13 +25,7 @@ unsigned int randomSize(){
 	return nb;
 }
 
-int main(int argc, char **argv) {
-
-	if (argc >= 2){
-		std::string input = argv[1];
-		if (input == "--help")
-			help = 1;
-	}
+int main(void) {
 
 	std::cout << "---------------------------" << std::endl;
 	std::cout << GREEN << "      CLASSIC TESTOR       " << RESET << std::endl;
@@ -46,10 +38,8 @@ int main(int argc, char **argv) {
 		sp.addNumber(17);
 		sp.addNumber(9);
 		sp.addNumber(11);
-		if (help){
-			std::cout << "Container(" << UNDERLINE << "5" << RESET << "): ";
-			std::cout << "6, 3, 17, 9, 11" << std::endl << std::endl;
-		}
+		DEBUG_CONTAINER("5");
+		DEBUG_NB_SP("6, 3, 17, 9, 11");
 		std::cout << sp.shortestSpan() << std::endl;
 		std::cout << sp.longestSpan() << std::endl;
 	}
@@ -62,12 +52,10 @@ int main(int argc, char **argv) {
 
 	Span sp1 = Span(0);
 
+	std::cout << "Container(" << UNDERLINE << "0" << RESET << "): ";
+	
 	try{sp1.addNumber(42);}
-	catch(std::out_of_range &e){std::cout << RED << e.what() << RESET << std::endl;}
-
-	if (help){
-		std::cout << "Container(" << UNDERLINE << "0" << RESET << "): " << std::endl;
-	}
+	catch(std::out_of_range &e){std::cout << std::endl << RED << e.what() << RESET << std::endl;}
 
 	std::cout << std::endl;
 
@@ -76,7 +64,7 @@ int main(int argc, char **argv) {
 		unsigned int shortest = sp1.shortestSpan();
 		std::cout << shortest << std::endl;
 	}
-	catch (std::out_of_range &e){std::cout << RED << std::endl << e.what() << RESET << std::endl;}
+	catch (std::out_of_range &e){std::cout << RED << e.what() << RESET << std::endl;}
 	
 	std::cout << std::endl;
 	std::cout << "-------------" << std::endl << std::endl;
@@ -86,7 +74,7 @@ int main(int argc, char **argv) {
 		unsigned int longest = sp1.longestSpan();
 		std::cout << longest << std::endl;
 	}
-	catch (std::out_of_range &e){std::cout << RED << std::endl << e.what() << RESET << std::endl;}
+	catch (std::out_of_range &e){std::cout << RED << e.what() << RESET << std::endl;}
 	
 
 	std::cout << std::endl;
@@ -107,10 +95,8 @@ int main(int argc, char **argv) {
     { sp2.addNumberList(array.begin(), array.end()); }
     catch(std::out_of_range &e) { std::cout << e.what() << std::endl; }
 	
-	if (help){
-		std::cout << "Container(" << UNDERLINE << "5" << RESET << "): ";
-		std::cout << "30, 23, 05, 01, 11" << std::endl << std::endl;
-	}
+	DEBUG_CONTAINER("5");
+	DEBUG_NB_SP("30, 23, 05, 01, 11");
 
 	std::cout << UNDERLINE << "shortestSpan:" << RESET << std::endl;
 	try{
@@ -128,8 +114,7 @@ int main(int argc, char **argv) {
 		std::cout << longest << std::endl;
 	}
 	catch (std::out_of_range &e){std::cout << RED << std::endl << e.what() << RESET << std::endl;}
-    std::cout << std::endl;
-	
+
 	std::cout << std::endl;
 	std::cout << "---------------------------" << std::endl;
 	std::cout << GREEN << "       RANDOM TESTOR       " << RESET << std::endl;
@@ -150,8 +135,7 @@ int main(int argc, char **argv) {
 	int nb;
 	for (unsigned int i = 0; i < size; i++){
 		nb = randomNumber();
-		if (help)
-			std::cout << nb << ", ";
+		DEBUG_NB_RDN(nb);
 		try{span.addNumber(nb);}
 		catch(std::out_of_range &e){std::cout << RED << std::endl << e.what() << RESET;break;}
 	}

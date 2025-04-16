@@ -6,13 +6,14 @@
 /*   By: inowak-- <inowak--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 08:46:39 by inowak--          #+#    #+#             */
-/*   Updated: 2025/04/15 15:22:17 by inowak--         ###   ########.fr       */
+/*   Updated: 2025/04/16 10:50:03 by inowak--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # pragma once
 
-# include "colors.hpp"
+# include "debug.hpp"
+
 # include <algorithm>
 # include <iostream>
 # include <vector>
@@ -20,8 +21,6 @@
 # include <cstdlib>
 # include <exception>
 # include <limits>
-
-extern int help;
 
 int randomNumber();
 

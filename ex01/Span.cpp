@@ -6,7 +6,7 @@
 /*   By: inowak-- <inowak--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 09:45:06 by inowak--          #+#    #+#             */
-/*   Updated: 2025/04/15 15:22:22 by inowak--         ###   ########.fr       */
+/*   Updated: 2025/04/16 10:45:49 by inowak--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,7 @@ unsigned int Span::shortestSpan() {
 
 	for (unsigned int i = 0; i < span.size(); i++){
 		if (std::count(span.begin(), span.end(), span[i]) > 1){
-			if (help)
-				std::cout << "Span min : " << span[i] << " is duplicate" << std::endl;
+			DEBUG_DUPLICATE(span[i]);
 			return (0);
 		}
 	}
@@ -79,8 +78,7 @@ unsigned int Span::shortestSpan() {
 			}
 		}
 	}
-	if (help)
-		std::cout << "Span min :" << save1 << " and " << save2 << std::endl;
+	DEBUG_SHORTEST(save1, save2);
 	return (diff);
 }
 
@@ -120,8 +118,7 @@ unsigned int Span::longestSpan() {
 
 	std::vector<int>::iterator min = std::min_element(this->span.begin(), this->span.end());
 	std::vector<int>::iterator max = std::max_element(this->span.begin(), this->span.end());
-	if (help)
-		std::cout << "Span max :" << *max << " and " << *min << std::endl;
+	DEBUG_LONGEST(max, min);
 	return (*max - *min);
 }
 

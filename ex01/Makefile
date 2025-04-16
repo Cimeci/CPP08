@@ -2,12 +2,16 @@ NAME = Span
 
 CXX = c++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
+CXXFLAGSHELP = $(CXXFLAGS) -D HELP
 
 OBJDIR = obj
+OBJDIRHELP = obj_help
+
 
 SRC = main.cpp Span.cpp
 
 OBJ = $(addprefix $(OBJDIR)/, $(SRC:.cpp=.o))
+OBJHELP = $(addprefix $(OBJDIRHELP)/, $(SRC:.cpp=.o))
 
 all: $(NAME)
 
@@ -19,11 +23,22 @@ $(OBJDIR)/%.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	rm -rf $(OBJDIR)
+	rm -rf $(OBJDIR) $(OBJDIRHELP)
 
 fclean: clean
 	rm -rf $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re
+# HELP SECTION #
+
+help: $(OBJHELP)
+	$(CXX) $(CXXFLAGSHELP) -o $(NAME) $(OBJHELP)
+
+$(OBJDIRHELP)/%.o: %.cpp
+	@mkdir -p $(OBJDIRHELP)
+	$(CXX) $(CXXFLAGSHELP) -c $< -o $@
+
+relp: fclean help
+
+.PHONY: all clean fclean re help relp
