@@ -57,6 +57,8 @@
 		"utility": "cpp",
 		"iomanip": "cpp",
 		"sstream": "cpp",
-		"cinttypes": "cpp"
+		"cinttypes": "cpp",
+		"*.tpp": "cpp",
+		"list": "cpp"
 	}
 }

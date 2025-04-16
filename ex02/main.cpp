@@ -6,14 +6,13 @@
 /*   By: inowak-- <inowak--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 18:00:56 by inowak--          #+#    #+#             */
-/*   Updated: 2025/04/15 18:59:21 by inowak--         ###   ########.fr       */
+/*   Updated: 2025/04/16 13:44:49 by inowak--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "MutantStack.hpp"
 # include "colors.hpp"
 # include <list>
-# include <iomanip>
 
 int main()
 {
